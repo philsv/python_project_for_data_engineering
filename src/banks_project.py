@@ -150,8 +150,12 @@ if __name__ == "__main__":
     run_query(query_2, sql_connection)
     
     # Query 3: Print only the names of the top 5 banks
-    query_3 = "SELECT 'Bank name' from Largest_banks LIMIT 5"
+    query_3 = 'SELECT "Bank name" from Largest_banks LIMIT 5'
     run_query(query_3, sql_connection)
+    
+    # Query 4: Print the schema of the table
+    query_4 = "PRAGMA table_info(Largest_banks);"
+    run_query(query_4, sql_connection)
     
     log_progress("Process Complete")
     sql_connection.close()
